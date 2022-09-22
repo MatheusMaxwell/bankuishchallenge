@@ -21,18 +21,17 @@ import com.matheusmaxwell.bankuishchallenge.utils.extensions.setVisibilityForBoo
 
 class RepositoryDetailFragment : Fragment() {
 
-    private var _binding: FragmentRepositoryDetailBinding? = null
+    private lateinit var binding: FragmentRepositoryDetailBinding
     private val args: RepositoryDetailFragmentArgs by navArgs()
     private var repository: RepositoryDomain? = null
 
-    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         repository = args.repository
-        _binding = FragmentRepositoryDetailBinding.inflate(inflater, container, false)
+        binding = FragmentRepositoryDetailBinding.inflate(inflater, container, false)
         return binding.root
 
     }
@@ -79,8 +78,4 @@ class RepositoryDetailFragment : Fragment() {
 
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 }
