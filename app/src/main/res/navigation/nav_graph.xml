@@ -9,6 +9,7 @@
         android:id="@+id/RepositoriesFragment"
         android:name="com.matheusmaxwell.bankuishchallenge.presentation.repositories.RepositoriesFragment"
         android:label="@string/repositories_fragment_label"
+
         tools:layout="@layout/fragment_repositories">
 
         <action
@@ -24,5 +25,9 @@
         <action
             android:id="@+id/action_RepositoryDetailFragment_to_RepositoriesFragment"
             app:destination="@id/RepositoriesFragment" />
+
+        <argument
+            android:name="repository"
+            app:argType="com.matheusmaxwell.bankuishchallenge.domain.model.RepositoryDomain" />
     </fragment>
 </navigation>

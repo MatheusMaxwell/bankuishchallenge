@@ -7,7 +7,8 @@ import com.matheusmaxwell.bankuishchallenge.databinding.RepositoryItemListBindin
 import com.matheusmaxwell.bankuishchallenge.domain.model.RepositoryDomain
 
 class RepositoryItemAdapter(
-    private val repositories: List<RepositoryDomain>
+    private var repositories: List<RepositoryDomain>,
+    private var onClick: (repository: RepositoryDomain) -> Unit
 ): RecyclerView.Adapter<RepositoryItemViewHolder>() {
 
     private lateinit var binding: RepositoryItemListBinding
@@ -19,10 +20,20 @@ class RepositoryItemAdapter(
 
     override fun onBindViewHolder(holder: RepositoryItemViewHolder, position: Int) {
         val repository = repositories[position]
+        holder.itemView.setOnClickListener {
+            onClick.invoke(repository)
+        }
         holder.bind(repository)
     }
 
     override fun getItemCount(): Int = repositories.size
+
+    fun update(list: List<RepositoryDomain>){
+        val newList = repositories.toMutableList()
+        newList.addAll(list)
+        repositories = newList.distinctBy { it.id }
+        notifyDataSetChanged()
+    }
 
 }
 

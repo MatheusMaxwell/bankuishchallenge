@@ -15,6 +15,7 @@ import kotlinx.coroutines.launch
 class RepositoriesViewModel(
     private val fetchRepositoriesUseCase: FetchRepositoriesUseCase
 ): ViewModel() {
+    private val SEARCH_LANGUAGE = "language:kotlin"
 
     private val _viewStateRepositoriesLiveData =
         MutableLiveData<ViewState<List<RepositoryDomain>>>()
@@ -22,10 +23,10 @@ class RepositoriesViewModel(
         _viewStateRepositoriesLiveData
 
 
-    fun fetchRepositories(searchText: String, page: Int){
+    fun fetchRepositories(page: Int){
         _viewStateRepositoriesLiveData.value = ViewState.Loading()
         viewModelScope.launch {
-            when(val result = fetchRepositoriesUseCase.execute(searchText, page)){
+            when(val result = fetchRepositoriesUseCase.execute(SEARCH_LANGUAGE, page)){
                 is GenericResult.Success -> {
                     when (result.success) {
                         is GenericSuccessResult.Populated -> {

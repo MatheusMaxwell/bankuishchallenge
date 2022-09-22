@@ -15,6 +15,7 @@ import com.matheusmaxwell.bankuishchallenge.domain.model.RepositoryDomain
 import com.matheusmaxwell.bankuishchallenge.presentation.repositories.adapter.RepositoryItemAdapter
 import com.matheusmaxwell.bankuishchallenge.utils.extensions.makeGone
 import com.matheusmaxwell.bankuishchallenge.utils.extensions.makeVisible
+import com.matheusmaxwell.bankuishchallenge.utils.pagination.PaginationScrollListener
 import com.matheusmaxwell.bankuishchallenge.utils.viewState.ViewState
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import retrofit2.Response.error
@@ -22,16 +23,19 @@ import retrofit2.Response.error
 
 class RepositoriesFragment : Fragment() {
 
-    private var _binding: FragmentRepositoriesBinding? = null
+    private lateinit var binding: FragmentRepositoriesBinding
     private var activityContext: FragmentActivity? = null
     private val viewModel: RepositoriesViewModel by viewModel()
     private var adapter: RepositoryItemAdapter? = null
+    private var rvLayoutManager: LinearLayoutManager? = null
+    private var page = 1
+    private var isLastPage: Boolean = false
+    private var isLoadingMore: Boolean = false
 
-    private val binding get() = _binding!!
 
 
     override fun onResume() {
-        viewModel.fetchRepositories("language:kotlin", 1)
+        viewModel.fetchRepositories(1)
         super.onResume()
     }
 
@@ -40,34 +44,62 @@ class RepositoriesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         activityContext = requireActivity()
-        _binding = FragmentRepositoriesBinding.inflate(inflater, container, false)
+        binding = FragmentRepositoriesBinding.inflate(inflater, container, false)
         return binding.root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-//        binding.buttonFirst.setOnClickListener {
-//            findNavController().navigate(R.id.action_RepositoriesFragment_to_RepositoryDetailFragment)
-//        }
         setupView()
         setupObservables()
     }
 
-    private fun setupView(){
+    private fun setupView() = with(binding){
 
+        rvLayoutManager = LinearLayoutManager(activityContext)
+
+        swipeContainerRepositories.setOnRefreshListener {
+            page = 1
+            adapter = null
+            viewModel.fetchRepositories(page)
+        }
+
+        rvRepositories.addOnScrollListener(object : PaginationScrollListener(rvLayoutManager) {
+            override fun isLastPage(): Boolean {
+                return isLastPage
+            }
+
+            override fun isLoading(): Boolean {
+                return isLoadingMore
+            }
+
+            override fun loadMoreItems() {
+                isLoadingMore = true
+                page++
+                viewModel.fetchRepositories(page)
+            }
+        })
     }
 
     private fun createRepositoriesList(list: List<RepositoryDomain>) = with(binding) {
-        rvRepositories.removeAllViews()
-        rvRepositories.layoutManager = LinearLayoutManager(activityContext)
-        adapter = RepositoryItemAdapter(list)
-        rvRepositories.adapter = adapter
+        isLoadingMore = false
+        swipeContainerRepositories.isRefreshing = false
+        if(adapter == null){
+            rvRepositories.removeAllViews()
+            rvRepositories.layoutManager = rvLayoutManager
+            adapter = RepositoryItemAdapter(list, ::onRepositoryClickItem)
+            rvRepositories.adapter = adapter
+        }
+        else{
+            adapter?.update(list)
+        }
+
+    }
+
+    private fun onRepositoryClickItem(repository: RepositoryDomain){
+        adapter = null
+        val action = RepositoriesFragmentDirections.actionRepositoriesFragmentToRepositoryDetailFragment(repository)
+        findNavController().navigate(action)
     }
 
 

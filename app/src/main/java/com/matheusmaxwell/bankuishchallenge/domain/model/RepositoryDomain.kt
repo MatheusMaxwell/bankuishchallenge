@@ -2,6 +2,7 @@ package com.matheusmaxwell.bankuishchallenge.domain.model
 
 import com.google.gson.annotations.SerializedName
 import com.matheusmaxwell.bankuishchallenge.data.model.Owner
+import java.io.Serializable
 
 class RepositoryDomain(
     var id: Long,
@@ -16,4 +17,4 @@ class RepositoryDomain(
     var watchers: Int,
     var topics: List<String>,
     var owner: Owner?
-)
+): Serializable
