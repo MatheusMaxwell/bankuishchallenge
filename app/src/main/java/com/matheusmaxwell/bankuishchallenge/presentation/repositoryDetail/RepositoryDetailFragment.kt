@@ -44,6 +44,7 @@ class RepositoryDetailFragment : Fragment() {
     }
 
     private fun setupView() = with(binding){
+
         repository?.let { repo ->
             txtRepositoryName.text = repo.name
             txtRepositoryFullName.text = repo.fullName

@@ -13,8 +13,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="90c4cc5d-2554-4bcf-9fcb-830855476f05" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/matheusmaxwell/bankuishchallenge/data/dataSource/RepositoryRemoteDataSourceImplTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.3.3/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.3/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_arrow_white_24.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3.3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.3/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.3/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.3/fileHashes/fileHashes.bin" afterDir="false" />
@@ -22,8 +21,9 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.3.3/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.3/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/matheusmaxwell/bankuishchallenge/presentation/repositoryDetail/RepositoryDetailFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/matheusmaxwell/bankuishchallenge/presentation/repositoryDetail/RepositoryDetailFragment.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +31,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[/Users/matheusmeireles/.android/avd/Pixel_3a_API_31_arm64-v8a.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -39,6 +40,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -59,10 +63,10 @@
         <option value="Kotlin Object" />
         <option value="Kotlin Interface" />
         <option value="Kotlin Data Class" />
-        <option value="Kotlin File" />
         <option value="layoutResourceFile" />
         <option value="Kotlin Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -119,10 +123,12 @@
       <recent name="com.matheusmaxwell.bankuishchallenge.presentation.repositories" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.matheusmaxwell.bankuishchallenge.presentation.repositories" />
+      <recent name="com.matheusmaxwell.bankuishchallenge.data.repository" />
       <recent name="com.matheusmaxwell.bankuishchallenge.data.dataSource" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.RepositoryRemoteDataSourceImplTest.when fetchRepositories response formValue list">
+  <component name="RunManager" selected="Android App.app">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="BankuishChallenge.app" />
       <option name="DEPLOY" value="true" />
@@ -180,12 +186,96 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RepositoryRemoteDataSourceImplTest.when fetchRepositories response formValue list" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RepositoriesViewModelTest.when fetchRepositories return ViewState_Empty" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.matheusmaxwell.bankuishchallenge.data.dataSource.RepositoryRemoteDataSourceImplTest.when fetchRepositories response formValue list&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.matheusmaxwell.bankuishchallenge.presentation.repositories.RepositoriesViewModelTest.when fetchRepositories return ViewState_Empty&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:testDebugUnitTest" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="RepositoriesViewModelTest.when fetchRepositories return ViewState_Error" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.matheusmaxwell.bankuishchallenge.presentation.repositories.RepositoriesViewModelTest.when fetchRepositories return ViewState_Error&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:testDebugUnitTest" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="RepositoriesViewModelTest.when fetchRepositories return ViewState_Success" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.matheusmaxwell.bankuishchallenge.presentation.repositories.RepositoriesViewModelTest.when fetchRepositories return ViewState_Success&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:testDebugUnitTest" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="RepositoryRepoImplTest.when repository fetchRepositories return GenericSuccessResult_Populated" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.matheusmaxwell.bankuishchallenge.data.repository.RepositoryRepoImplTest.when repository fetchRepositories return GenericSuccessResult_Populated&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:testDebugUnitTest" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="RepositoryRepoImplTest.when repository getStorageUrlByFileKey return GenericErrorResult_Unknown" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.matheusmaxwell.bankuishchallenge.data.repository.RepositoryRepoImplTest.when repository getStorageUrlByFileKey return GenericErrorResult_Unknown&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -203,7 +293,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.RepositoryRemoteDataSourceImplTest.when fetchRepositories response formValue list" />
+        <item itemvalue="Gradle.RepositoriesViewModelTest.when fetchRepositories return ViewState_Error" />
+        <item itemvalue="Gradle.RepositoriesViewModelTest.when fetchRepositories return ViewState_Empty" />
+        <item itemvalue="Gradle.RepositoriesViewModelTest.when fetchRepositories return ViewState_Success" />
+        <item itemvalue="Gradle.RepositoryRepoImplTest.when repository getStorageUrlByFileKey return GenericErrorResult_Unknown" />
+        <item itemvalue="Gradle.RepositoryRepoImplTest.when repository fetchRepositories return GenericSuccessResult_Populated" />
       </list>
     </recent_temporary>
   </component>
