@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/RepositoriesFragment">
+
+    <fragment
+        android:id="@+id/RepositoriesFragment"
+        android:name="com.matheusmaxwell.bankuishchallenge.presentation.repositories.RepositoriesFragment"
+        android:label="@string/repositories_fragment_label"
+        tools:layout="@layout/fragment_repositories">
+
+        <action
+            android:id="@+id/action_RepositoriesFragment_to_RepositoryDetailFragment"
+            app:destination="@id/RepositoryDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/RepositoryDetailFragment"
+        android:name="com.matheusmaxwell.bankuishchallenge.presentation.repositoryDetail.RepositoryDetailFragment"
+        android:label="@string/repository_detail_fragment_label"
+        tools:layout="@layout/fragment_repository_detail">
+
+        <action
+            android:id="@+id/action_RepositoryDetailFragment_to_RepositoriesFragment"
+            app:destination="@id/RepositoriesFragment" />
+    </fragment>
+</navigation>
